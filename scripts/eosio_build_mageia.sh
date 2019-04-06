@@ -46,7 +46,7 @@ DEP_ARRAY=(
 	git sudo procps-ng which gcc gcc-c++ autoconf automake libtool make \
 	bzip2-devel wget bzip2 compat-openssl10 graphviz doxygen \
 	openssl-devel gmp-devel libstdc++-devel python2 python2-devel python3 python3-devel \
-	libedit ncurses-devel swig llvm llvm-devel lib64llvm7.0 llvm-static libcurl-devel libusb-devel
+	libedit ncurses-devel swig llvm4.0 llvm4.0-devel llvm4.0-libs llvm4.0-static libcurl-devel libusb-devel
 )
 COUNT=1
 DISPLAY=""
@@ -221,9 +221,9 @@ printf "\\n"
 
 printf "Checking LLVM support...\\n"
 if [ ! -d $LLVM_ROOT ]; then
-	ln -s /usr/lib64/llvm $LLVM_ROOT \
+	ln -s /usr/lib64/llvm4.0 $LLVM_ROOT \
 	|| exit 1
-	printf " - LLVM successfully linked from /usr/lib64/llvm to ${LLVM_ROOT}\\n"
+	printf " - LLVM successfully linked from /usr/lib64/llvm4.0 to ${LLVM_ROOT}\\n"
 else
 	printf " - LLVM found @ ${LLVM_ROOT}.\\n"
 fi
